@@ -1,4 +1,7 @@
+import { AvisosService } from './../../services/avisos.service';
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Aviso } from './model/IAvisos';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +10,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  avisos: any;
+
+  constructor(private avisosService: AvisosService) {
+
+    this.avisosService.getAvisos().subscribe(
+      response => {
+        this.avisos = response;
+      },
+      (error) => {
+        console.error(error);
+      }
+    )
+  }
 
   ngOnInit(): void {
+    console.log(this.avisos)
   }
 
 }
