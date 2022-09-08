@@ -5,69 +5,21 @@
 
   <div class="content-container row">
 
-    <div class="col-md-2 avisos shadow">
-      Teste
+
+    <div class="avisos col-md-2 shadow" *ngFor="let item of avisos">
+
+      <div class="aviso-content" (click)="onPopup()">
+        <span><strong> {{item.titulo}} </strong></span>
+        <span><strong>Data: </strong> {{item.data}}</span>
+      </div>
+
     </div>
 
+    <div class="popup" *ngFor="let item of avisos">
+      {{item.descricao}}
+    </div>
 
   </div>
 
 </div>
 
-<!-- <div class="container shadow-lg">
-  <div class="row title-container">
-      <h1 class="text-center title-quadro">QUADRO DE AVISOS</h1>
-  </div>
-  <br><br>
-  <div class="row content-container"> -->
-<!-- <?php foreach ($avisos as $aviso) : ?> -->
-
-<!-- <div class="cards shadow col-md-2" data-toggle="modal" data-target="#popup-iddoaviso">
-              <span class="content-card">
-                  <span class=""><strong>Titulo aviso</strong></span>
-                  <span class=""><strong>Data: </strong>01/01/2001</span>
-              </span>
-          </div>
-
-          <div class="modal fade" id="popup-iddoaviso" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-              <div class="modal-dialog modal-dialog-centered" role="document">
-                  <div class="modal-content">
-                      <div class="modal-header">
-                          <h5 class="modal-title" id="exampleModalLongTitle">Titulo Aviso</h5>
-                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                              <span aria-hidden="true">&times;</span>
-                          </button>
-                      </div>
-                      <div class="modal-body">
-                          Conteudo
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <br> -->
-<!-- <?php endforeach ?> -->
-<!-- </div>
-
-
-</div> -->
-
-<!-- Modal/Popup -->
-<!-- <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-          <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-              </button>
-          </div>
-          <div class="modal-body">
-              ...
-          </div>
-          <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
-          </div>
-      </div>
-  </div>
-</div> -->

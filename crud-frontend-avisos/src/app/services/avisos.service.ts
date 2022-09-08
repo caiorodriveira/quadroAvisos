@@ -1,3 +1,4 @@
+import { Aviso } from './../components/home/model/IAvisos';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs'
@@ -11,11 +12,11 @@ export class AvisosService {
 
   constructor(private httpClient: HttpClient) { }
 
-  public getAvisos(): Observable<any> {
-    return this.httpClient.get(this.API_SERVER);
+  public getAvisos(): Observable<Aviso[]> {
+    return this.httpClient.get<Aviso[]>(this.API_SERVER);
   }
 
-  public saveAvisos(aviso: any): Observable<any> {
+  public saveAvisos(aviso: Aviso[]): Observable<any> {
     return this.httpClient.post(this.API_SERVER, aviso)
   }
 

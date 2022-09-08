@@ -10,7 +10,7 @@ import { Aviso } from './model/IAvisos';
 })
 export class HomeComponent implements OnInit {
 
-  avisos: any;
+  avisos: Aviso[] = [];
 
   constructor(private avisosService: AvisosService) {
 
@@ -22,10 +22,15 @@ export class HomeComponent implements OnInit {
         console.error(error);
       }
     )
+
   }
 
   ngOnInit(): void {
-    console.log(this.avisos)
+    
   }
 
+  onPopup(): void {}
+
+
+  openDialog(){console.log("Fuck you")}
 }
