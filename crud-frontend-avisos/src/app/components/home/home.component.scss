@@ -49,6 +49,25 @@
 }
 
 
+.popup{
+  // display: none;
+  position: relative;
+  width: 50%;
+  top:30%;
+  left: 25%;
+}
+.popup .close-btn{
+  // position: absolute;
+  // top: 0;
+}
+
+.popup.active{
+  display: block;
+}
+
+
+
+
 
 @media only screen and (max-width: 1399px) {
   .avisos {
@@ -94,6 +113,8 @@
     transform: scale(1.05);
   }
 }
+
+
 
 // .modal-body {
 //   overflow-wrap: break-word;

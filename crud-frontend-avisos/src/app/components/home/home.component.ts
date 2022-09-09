@@ -26,10 +26,16 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    
+
   }
 
-  onPopup(): void {}
+  onPopup(id:number): void {
+    document.getElementById(`pop${id}`)?.classList.add('active');
+  }
+
+  closePopup(id:number): void {
+    
+  }
 
 
   openDialog(){console.log("Fuck you")}

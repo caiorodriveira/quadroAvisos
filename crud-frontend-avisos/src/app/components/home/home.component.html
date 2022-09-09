@@ -6,17 +6,29 @@
   <div class="content-container row">
 
 
-    <div class="avisos col-md-2 shadow" *ngFor="let item of avisos">
+    <div class="avisos col-md-2 shadow" *ngFor="let aviso of avisos">
 
-      <div class="aviso-content" (click)="onPopup()">
-        <span><strong> {{item.titulo}} </strong></span>
-        <span><strong>Data: </strong> {{item.data}}</span>
+      <div class="aviso-content" (click)="onPopup(aviso.id)">
+        <span class="text-center"><strong> {{aviso.titulo}} </strong></span>
+        <span><strong>Data: </strong> {{aviso.data}}</span>
       </div>
 
     </div>
 
-    <div class="popup" *ngFor="let item of avisos">
-      {{item.descricao}}
+
+    <!-- <div class="div-modal" *ngFor="let aviso of avisos"> -->
+    <div class="div-modal">
+      <!-- <div class="popup" id="pop{{aviso.id}}"> -->
+      <div class="popup" id="pop1">
+
+        <div class="close-btn"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+          <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+        </svg></div>
+
+
+
+        <div class="content">{{avisos[0].descricao}}</div>
+      </div>
     </div>
 
   </div>
