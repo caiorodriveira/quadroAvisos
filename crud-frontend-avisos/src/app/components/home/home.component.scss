@@ -19,16 +19,24 @@
   padding-left: 40px;
   padding-right: 35px;
   width: 100%;
+
+  max-height: 485px;
 }
 
-.avisos{
+.aviso{
   border-radius: 4px;
   margin-left: 37px;
   margin-bottom: 20px;
 
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
-.avisos:hover {
+
+
+.aviso:hover {
   cursor: pointer;
   -webkit-transform: scale(1.2);
   -ms-transform: scale(1.2);
@@ -38,23 +46,26 @@
   z-index: 99;
 }
 
-.aviso-content{
-  margin: 0;
-  padding: 0;
-  border: 0;
-  min-height: 100px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-}
-
 
 .popup{
   // display: none;
-  position: relative;
+  position: absolute;
   width: 50%;
-  top:30%;
+  top:20%;
   left: 25%;
+
+  min-height: 50vh;
+  max-height: 60vh;
+
+  border-radius: 10px;
+  border: solid;
+  background-color: #fff;
+
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  text-align: justify;
+  overflow-y: scroll;
 }
 .popup .close-btn{
   // position: absolute;
@@ -62,7 +73,8 @@
 }
 
 .popup.active{
-  display: block;
+  transition: 0.5s;
+  top: 20%;
 }
 
 
@@ -70,29 +82,25 @@
 
 
 @media only screen and (max-width: 1399px) {
-  .avisos {
+  .aviso {
     margin-left: 32px;
   }
 }
 @media only screen and (max-width: 1199px) {
-  .content-container{
-    padding-left: 20px;
-    padding-right: 0;
-  }
-  .avisos {
-    margin-left: 25px;
+  .aviso {
+    margin-left: 19px;
     width: 158px;
   }
 }
-@media only screen and (max-width: 992px) {
+@media only screen and (max-width: 991px) {
   .content-container {
-    padding-left: 8px;
+    padding-left: 20px;
     padding-right: 0px;
   }
-  .avisos {
+  .aviso {
     width: 150px;
   }
-  .avisos:hover{
+  .aviso:hover{
     -webkit-transform: scale(1.1);
     -ms-transform: scale(1.1);
     transform: scale(1.1);
@@ -103,11 +111,11 @@
     padding-left: 0px;
     padding-right: 0px;
   }
-  .avisos {
+  .aviso {
     margin-left: 30px;
     width: 90%;
   }
-  .avisos:hover{
+  .aviso:hover{
     -webkit-transform: scale(1.05);
     -ms-transform: scale(1.05);
     transform: scale(1.05);

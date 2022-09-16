@@ -29,14 +29,5 @@ export class HomeComponent implements OnInit {
 
   }
 
-  onPopup(id:number): void {
-    document.getElementById(`pop${id}`)?.classList.add('active');
-  }
 
-  closePopup(id:number): void {
-    
-  }
-
-
-  openDialog(){console.log("Fuck you")}
 }

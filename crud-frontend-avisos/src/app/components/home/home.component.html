@@ -1,3 +1,17 @@
+<!-- <div class="modal fade modal-dialog modal-dialog-scrollable modal-dialog-centered" id="modal{{aviso.id}}" tabindex="-1" aria-labelledby="conteudoAviso" aria-hidden="true"  *ngFor="let aviso of avisos">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="{{aviso.titulo}}">{{aviso.titulo}}</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        {{aviso.descricao}}
+      </div>
+    </div>
+  </div>
+</div> -->
+
 <div class="container shadow">
   <div class="title-container">
     <h3>QUADRO DE AVISOS</h3>
@@ -5,33 +19,12 @@
 
   <div class="content-container row">
 
-
-    <div class="avisos col-md-2 shadow" *ngFor="let aviso of avisos">
-
-      <div class="aviso-content" (click)="onPopup(aviso.id)">
+      <div class="aviso col-md-2 shadow" *ngFor="let aviso of avisos" data-bs-toggle="modal" attr.data-bs-target="#modal{{aviso.id}}">
         <span class="text-center"><strong> {{aviso.titulo}} </strong></span>
         <span><strong>Data: </strong> {{aviso.data}}</span>
       </div>
 
-    </div>
-
-
-    <!-- <div class="div-modal" *ngFor="let aviso of avisos"> -->
-    <div class="div-modal">
-      <!-- <div class="popup" id="pop{{aviso.id}}"> -->
-      <div class="popup" id="pop1">
-
-        <div class="close-btn"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
-          <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
-        </svg></div>
-
-
-
-        <div class="content">{{avisos[0].descricao}}</div>
-      </div>
-    </div>
-
   </div>
-
 </div>
+
 
