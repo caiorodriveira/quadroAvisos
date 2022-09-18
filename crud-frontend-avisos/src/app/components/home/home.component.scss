@@ -4,6 +4,7 @@
   min-height: 50vh;
   display: flex;
   flex-direction: column;
+  max-height: max-content;
   // max-width: 1320px;
 }
 
@@ -34,8 +35,6 @@
   justify-content: space-around;
 }
 
-
-
 .aviso:hover {
   cursor: pointer;
   -webkit-transform: scale(1.2);
@@ -45,40 +44,6 @@
   background-color: #fff;
   z-index: 99;
 }
-
-
-.popup{
-  // display: none;
-  position: absolute;
-  width: 50%;
-  top:20%;
-  left: 25%;
-
-  min-height: 50vh;
-  max-height: 60vh;
-
-  border-radius: 10px;
-  border: solid;
-  background-color: #fff;
-
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-  word-break: break-word;
-  text-align: justify;
-  overflow-y: scroll;
-}
-.popup .close-btn{
-  // position: absolute;
-  // top: 0;
-}
-
-.popup.active{
-  transition: 0.5s;
-  top: 20%;
-}
-
-
-
 
 
 @media only screen and (max-width: 1399px) {
@@ -120,7 +85,12 @@
     -ms-transform: scale(1.05);
     transform: scale(1.05);
   }
+
+  .footer-container{
+    display: none
+  }
 }
+
 /*comentário teste usuario"*/
 
 

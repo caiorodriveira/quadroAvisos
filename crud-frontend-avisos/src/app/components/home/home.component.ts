@@ -11,6 +11,7 @@ import { Aviso } from './model/IAvisos';
 export class HomeComponent implements OnInit {
 
   avisos: Aviso[] = [];
+  avisosnotload: any;
 
   constructor(private avisosService: AvisosService) {
 
@@ -24,10 +25,16 @@ export class HomeComponent implements OnInit {
     )
 
   }
-
-  ngOnInit(): void {
-
+  newAviso(){
+    console.log("Aviso Criado")
   }
+
+  editAviso(){
+    console.log("Aviso editado")
+  }
+
+  ngOnInit(): void {}
+
 
 
 }
