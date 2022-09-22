@@ -1,7 +1,7 @@
+import { Aviso } from './../../models/IAvisos';
 import { AvisosService } from './../../services/avisos.service';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Aviso } from './model/IAvisos';
 
 @Component({
   selector: 'app-home',
@@ -15,6 +15,20 @@ export class HomeComponent implements OnInit {
 
   constructor(private avisosService: AvisosService) {
 
+  }
+  newAviso(){
+    console.log("Editar Aviso")
+  }
+
+  editAviso(aviso: any){
+    console.log(`Editar aviso: "${aviso.titulo}"`)
+  }
+
+  ngOnInit(): void {
+    this.onGetAllAvisos();
+  }
+
+  onGetAllAvisos () :void {
     this.avisosService.getAvisos().subscribe(
       response => {
         this.avisos = response;
@@ -23,18 +37,7 @@ export class HomeComponent implements OnInit {
         console.error(error);
       }
     )
-
   }
-  newAviso(){
-    console.log("Aviso Criado")
-  }
-
-  editAviso(){
-    console.log("Aviso editado")
-  }
-
-  ngOnInit(): void {}
-
 
 
 }

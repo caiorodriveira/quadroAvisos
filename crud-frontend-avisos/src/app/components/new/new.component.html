@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="content-container">
+
+    <h2 class="text-center">Novo Aviso</h2>
+
+    <form [formGroup]="formAvisos">
+      <input type="text" formControlName="titulo" class="form-control" placeholder="titulo">
+      <textarea type="text" formControlName="descricao" class="form-control" placeholder="descricao"></textarea>
+      <input type="date" formControlName="data" class="form-control" placeholder="data">
+      <button class="btn btn-primary" type="button" (click)="onSubmit()">Enviar</button>
+    </form>
+  </div>
+</div>
