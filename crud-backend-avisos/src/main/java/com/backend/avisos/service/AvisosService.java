@@ -17,7 +17,7 @@ import com.backend.avisos.repository.IAvisosRepository;
 
 @Service
 public class AvisosService implements IAvisosRepository{
-	
+
 	@Autowired
 	private IAvisosRepository avisosRepository;
 
@@ -142,11 +142,13 @@ public class AvisosService implements IAvisosRepository{
 	@Override
 	public void deleteById(Long id) {
 		avisosRepository.deleteById(id);
+		
 	}
 
 	@Override
 	public void delete(Avisos entity) {
 		avisosRepository.delete(entity);
+		
 	}
 
 	@Override
@@ -196,5 +198,4 @@ public class AvisosService implements IAvisosRepository{
 		// TODO Auto-generated method stub
 		return null;
 	}
-	
 }

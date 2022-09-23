@@ -20,15 +20,15 @@ import com.backend.avisos.service.AvisosService;
 @RestController
 @RequestMapping("/avisos/")
 public class AvisosREST {
-
+	
 	@Autowired
 	private AvisosService avisosService;
-
+	
 	@GetMapping
 	private ResponseEntity<List<Avisos>> getAllAvisos() {
 		return ResponseEntity.ok(avisosService.findAll());
 	}
-
+	
 	@PostMapping
 	private ResponseEntity<Avisos> saveAvisoEntity(@RequestBody Avisos aviso) {
 		try {
@@ -44,5 +44,4 @@ public class AvisosREST {
 		avisosService.deleteById(id);
 		return ResponseEntity.ok(!(avisosService.findById(id) != null));
 	}
-
 }

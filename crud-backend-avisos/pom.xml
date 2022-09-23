@@ -8,7 +8,7 @@
 		<version>2.7.3</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>crud-backend-avisos</groupId>
+	<groupId>com.backend.avisos</groupId>
 	<artifactId>crud-backend-avisos</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>crud-backend-avisos</name>
