@@ -1,13 +1,29 @@
-<div class="container">
+<div class="container shadow">
   <div class="content-container">
 
     <h2 class="text-center">Novo Aviso</h2>
 
-    <form [formGroup]="formAvisos">
-      <input type="text" formControlName="titulo" class="form-control" placeholder="titulo">
-      <textarea type="text" formControlName="descricao" class="form-control" placeholder="descricao"></textarea>
-      <input type="date" formControlName="data" class="form-control" placeholder="data">
-      <button class="btn btn-primary" type="button" (click)="onSubmit()">Enviar</button>
+    <form [formGroup]="formAvisos" class="form">
+
+      <!-- <input type="text" formControlName="titulo" class="form-control" placeholder="titulo"> -->
+
+
+
+      <mat-form-field class="w-50 align-self-center">
+        <mat-label>Titulo</mat-label>
+        <input type="email" matInput formControlName="titulo">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Descrição</mat-label>
+        <textarea matInput placeholder="Conteúdo do aviso..." formControlName="descricao" class="mt-3"> [Aviso Vazio] </textarea>
+      </mat-form-field>
+
+
+      <!-- <textarea type="text" formControlName="descricao" class="form-control" placeholder="descricao"></textarea> -->
+
+      <button class="btn btn-primary" type="button" (click)="onSubmit()"
+        [disabled]="!formAvisos.value.titulo">Enviar</button>
     </form>
   </div>
 </div>

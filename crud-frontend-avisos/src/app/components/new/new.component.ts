@@ -20,11 +20,13 @@ export class NewComponent implements OnInit {
       id: [''],
       titulo: ['', Validators.required],
       descricao: ['', Validators.required],
-      data: ['', Validators.required]
+      data: new Date(),
     });
   }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    console.log(this.formAvisos)
+   }
 
   onSubmit(): void{
 
