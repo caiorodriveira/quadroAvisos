@@ -16,6 +16,8 @@ public class Avisos {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
+	
+	@Column(nullable = false)
 	private String titulo;
 	
 	@Column(columnDefinition = "TEXT", nullable = false)
