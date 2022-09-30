@@ -1,3 +1,4 @@
+import { EditComponent } from './components/edit/edit.component';
 import { NewComponent } from './components/new/new.component';
 import { HomeComponent } from './components/home/home.component';
 import { NgModule } from '@angular/core';
@@ -10,7 +11,10 @@ const routes: Routes = [
   {
     path: 'new', component: NewComponent
   },
-  
+  {
+    path: 'edit', component: EditComponent
+  },
+
 ];
 
 @NgModule({

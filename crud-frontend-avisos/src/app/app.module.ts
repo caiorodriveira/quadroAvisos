@@ -2,6 +2,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -10,6 +11,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { NewComponent } from './components/new/new.component';
 import { SharedModule } from './shared/shared.module';
+import { EditComponent } from './components/edit/edit.component';
 
 
 @NgModule({
@@ -17,6 +19,7 @@ import { SharedModule } from './shared/shared.module';
     AppComponent,
     HomeComponent,
     NewComponent,
+    EditComponent,
   ],
   imports: [
     BrowserModule,
@@ -27,6 +30,7 @@ import { SharedModule } from './shared/shared.module';
     ReactiveFormsModule,
     MatInputModule,
     BrowserAnimationsModule,
+    MatSnackBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

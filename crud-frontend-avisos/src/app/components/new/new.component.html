@@ -23,7 +23,7 @@
       <!-- <textarea type="text" formControlName="descricao" class="form-control" placeholder="descricao"></textarea> -->
 
       <button class="btn btn-primary" type="button" (click)="onSubmit()"
-        [disabled]="!formAvisos.value.titulo">Enviar</button>
+        [disabled]="!formAvisos.value.titulo || !formAvisos.value.descricao">Enviar</button>
     </form>
   </div>
 </div>

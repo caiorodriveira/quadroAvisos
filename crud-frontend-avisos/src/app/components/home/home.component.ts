@@ -16,13 +16,6 @@ export class HomeComponent implements OnInit {
   constructor(private avisosService: AvisosService) {
 
   }
-  newAviso(){
-    console.log("Editar Aviso")
-  }
-
-  editAviso(aviso: any){
-    console.log(`Editar aviso: "${aviso.titulo}"`)
-  }
 
   ngOnInit(): void {
     this.onGetAllAvisos();
