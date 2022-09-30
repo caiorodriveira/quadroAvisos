@@ -18,7 +18,7 @@ public class Avisos {
 	private Long id;
 	private String titulo;
 	
-	@Column(columnDefinition = "TEXT")
+	@Column(columnDefinition = "TEXT", nullable = false)
 	private String descricao;
 	private Date data;
 	
