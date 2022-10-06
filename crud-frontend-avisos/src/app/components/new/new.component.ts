@@ -1,7 +1,7 @@
+import { Router } from '@angular/router';
 import { AvisosService } from './../../services/avisos.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Location } from '@angular/common';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 
@@ -19,7 +19,7 @@ export class NewComponent implements OnInit {
     private fb: FormBuilder,
     private avisosService: AvisosService,
     private _snackBar: MatSnackBar,
-    private location: Location,
+    private route: Router,
   ) {
 
     this.formAvisos = this.fb.group({
@@ -32,11 +32,9 @@ export class NewComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    if(this.formAvisos.value.descricao == ''){
-      this.formAvisos.value.descricao == null;
-    }
-    console.log(this.formAvisos.value.descricao)
+
   }
+
 
   onSubmit(): void {
 
@@ -52,15 +50,14 @@ export class NewComponent implements OnInit {
     )
   }
 
-  onBack()
-  {
-    this.location.back()
+  redirectList(){
+    this.route.navigate(['']);
   }
 
   onSuccess()
   {
     this._snackBar.open(this.message, '', {duration: 3000});
-    this.onBack();
+    this.redirectList();
   }
 
   private onError()

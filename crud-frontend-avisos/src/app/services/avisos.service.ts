@@ -17,12 +17,12 @@ export class AvisosService {
   }
 
   public saveAvisos(aviso: Aviso[]): Observable<any> {
-    return this.httpClient.post(this.API_SERVER, aviso)
+    return this.httpClient.post<any>(this.API_SERVER, aviso)
   }
 
-  // public editAvisos(aviso: Aviso[]): Observable<any> {
-  //   return this.httpClient.put(this.API_SERVER, aviso)
-  // }
+  public deleteAvisoById(idAviso: number): Observable<any>{
+    return this.httpClient.delete<any>(this.API_SERVER + 'delete/' + idAviso)
+  }
 
 }
 
