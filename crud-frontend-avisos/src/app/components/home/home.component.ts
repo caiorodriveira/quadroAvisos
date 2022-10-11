@@ -38,7 +38,7 @@ export class HomeComponent implements OnInit {
       }
     )
   }
-
+  
   onDeleteAviso (idAviso: number) : void {
     this.avisosService.deleteAvisoById(idAviso).subscribe(
       () => {
