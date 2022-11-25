@@ -1,4 +1,5 @@
-import { Router } from '@angular/router';
+import { Aviso } from './../../models/IAvisos';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AvisosService } from './../../services/avisos.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
@@ -50,14 +51,10 @@ export class NewComponent implements OnInit {
     )
   }
 
-  redirectList(){
-    this.route.navigate(['']);
-  }
-
   onSuccess()
   {
     this._snackBar.open(this.message, '', {duration: 3000});
-    this.redirectList();
+    this.route.navigate(['']);
   }
 
   private onError()

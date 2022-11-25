@@ -2,7 +2,7 @@ import { Location } from '@angular/common';
 import { Aviso } from './../../models/IAvisos';
 import { AvisosService } from './../../services/avisos.service';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
@@ -20,7 +20,7 @@ export class HomeComponent implements OnInit {
     private avisosService: AvisosService,
     private _snackBar: MatSnackBar,
     private route: Router,
-    private location: Location,
+    private rotaAtual: ActivatedRoute,
 
     ) {}
 
@@ -38,7 +38,7 @@ export class HomeComponent implements OnInit {
       }
     )
   }
-  
+
   onDeleteAviso (idAviso: number) : void {
     this.avisosService.deleteAvisoById(idAviso).subscribe(
       () => {
@@ -54,13 +54,13 @@ export class HomeComponent implements OnInit {
     )
   }
 
-  redirectList(){
-    location.reload();
+  redirectToEdit(aviso: Aviso){
+    this.route.navigate(['edit'], {relativeTo: this.rotaAtual, state:{data: aviso}});
   }
   onSuccess()
   {
     this._snackBar.open(this.message, '', {duration: 3000});
-    this.redirectList();
+    location.reload();
   }
 
   private onError()

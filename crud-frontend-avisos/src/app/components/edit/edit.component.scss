@@ -1,0 +1,20 @@
+.container{
+  margin-top:10%;
+  padding: 20px 0px;
+
+}
+.titulo{
+  background-color: #868686;
+}
+.form{
+  display: flex;
+  flex-direction: column;
+}
+.descricao{
+  min-height: 120px;
+}
+
+.btn{
+  width: 100px;
+  align-self: center;
+}

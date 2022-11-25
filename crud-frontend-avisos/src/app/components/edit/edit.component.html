@@ -1,1 +1,27 @@
-<h1 class="text-center mt-5">Editar Aviso</h1>
+<div class="container shadow">
+  <div class="content-container">
+
+    <div class="titulo w-100">
+      <h2 class="text-center">Editar Aviso</h2>
+    </div>
+
+    <form [formGroup]="formAvisos" class="form">
+
+      <mat-form-field class="w-50 align-self-center my-5 border-1">
+        <mat-label>Titulo</mat-label>
+        <input type="email" matInput formControlName="titulo">
+      </mat-form-field>
+
+      <mat-form-field class="mx-5" appearance="fill">
+        <mat-label>Descrição</mat-label>
+        <textarea matInput placeholder="Conteúdo do aviso..." formControlName="descricao" class="mt-3 descricao"></textarea>
+      </mat-form-field>
+
+
+      <!-- <textarea type="text" formControlName="descricao" class="form-control" placeholder="descricao"></textarea> -->
+
+      <button class="btn btn-primary" type="button"
+        [disabled]="!formAvisos.value.titulo || !formAvisos.value.descricao" (click)="onSubmit()">Enviar</button>
+    </form>
+  </div>
+</div>
