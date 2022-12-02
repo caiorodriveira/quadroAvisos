@@ -8,7 +8,7 @@ import { Observable } from 'rxjs'
 })
 export class AvisosService {
 
-  private API_SERVER = 'http://localhost:8080/avisos/';
+  private API_SERVER = 'http://10.0.0.15:8080/avisos/';
 
   constructor(private httpClient: HttpClient) { }
 

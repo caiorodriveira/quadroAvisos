@@ -16,7 +16,7 @@ public class CrudBackendAvisosApplication {
 		return new WebMvcConfigurer() {
 			@Override	
 			public void addCorsMappings(CorsRegistry registry) {
-				registry.addMapping("/**").allowedOrigins("http://localhost:4200").allowedMethods("*").allowedHeaders("*");
+				registry.addMapping("/**").allowedOrigins("http://localhost:4200", "http://10.0.0.15:4200").allowedMethods("*").allowedHeaders("*");
 			}
 		};
 	}
